@@ -1,24 +1,53 @@
-button{
-    width: 100px;
-    height: 30px;
-    border-radius: 4px;
-    margin-left: 2px;
-}
 .inputText{
-    height: 24px;
     border-radius: 4px;
-    padding-left: 20px;
+    width: 95%;
+    height: 24px;
 }
-.task{
-    display: grid;
-    grid-auto-rows: 30px;
-    grid-template-columns: 2fr 1fr;
-    margin: 5px;
-    line-height: 30px;
+.buttonAdd{
+    height: 30px;
+    width: 100%;
 }
-.task > h5{
+table{
+    width: 400px;
+}
+.buttonDelete{
+    float: right;
+    width: 26px;
+    height: 26px;
+    border: none;
+    margin-left: 2px;
+    background-color: white;
+    background-image: url("src/close.png");
+    background-size: 26px;
+    background-repeat: no-repeat;
+}
+.buttonDelete:hover{
+    border: none;
+    cursor: pointer;
+}
+.check{
+    float: left;
+}
+h5{
     margin: 0;
 }
 #root{
-    width: 300px;
+    width: 400px;
+}
+
+.taskList{
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+table{
+    border: 2px solid grey;
+}
+.cross{
+    text-decoration:line-through;
+}
+.notCross{
+    text-decoration: none;
+}
+.info{
+    width: 100%;
 }
