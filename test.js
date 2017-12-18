@@ -5,7 +5,8 @@ class ClickButton extends React.Component {
     };
     addTask = () => {
         this.setState(prevState => {
-            return {out: prevState.out.concat(this.refs.task.value)}})
+            return {out: [...prevState.out, this.refs.task.value]}
+        });
     };
     deleteTask = index => {
         this.setState(prevState =>{
