@@ -18,7 +18,7 @@ class ClickButton extends React.Component {
         console.log(this.props)
         return Array.from(new Array(this.state.out.length), (cur, i) => {
             return <div className={'task'}>
-                <h5 name={i} ref={'name'}>{this.state.out[i]}</h5>
+                <h5>{this.state.out[i]}</h5>
                 <button onClick={this.deleteTask.bind(this, i)}>Удалить</button>
             </div>
         });
