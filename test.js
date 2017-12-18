@@ -3,13 +3,11 @@ class ClickButton extends React.Component {
         super(props);
         this.state = {out: []};
     };
-    click = () => {
-        this.setState(prevState =>{
-            prevState.out.push(this.refs.task.value);
-            return prevState.out;
-        });
+    addTask = () => {
+        this.setState(prevState => {
+            return {out: prevState.out.concat(this.refs.task.value)}})
     };
-    deleteTask(index){
+    deleteTask = index => {
         this.setState(prevState =>{
             return prevState.out.splice(index, 1);
         });
@@ -19,8 +17,8 @@ class ClickButton extends React.Component {
         return Array.from(new Array(this.state.out.length), (cur, i) => {
             return <div className={'task'}>
                 <h5>{this.state.out[i]}</h5>
-                <button onClick={this.deleteTask.bind(this, i)}>Удалить</button>
-            </div>
+                <button onClick={() => this.deleteTask(i)}>Удалить</button>
+            </div>;
         });
     };
     render() {
@@ -30,7 +28,7 @@ class ClickButton extends React.Component {
                        className={"inputText"}
                        type={"text"}
                        placeholder={"Напиши что-то"} />
-                <button onClick={this.click}>Добавить</button>
+                <button onClick={this.addTask}>Добавить</button>
             </div>
             <div>{this.createTasks()}</div>
         </div>;
