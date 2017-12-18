@@ -5,17 +5,17 @@ class ClickButton extends React.Component {
     };
     click = () => {
         this.setState(prevState =>{
-            prevState.out.push(this.refs.task.value)
+            prevState.out.push(this.refs.task.value);
             return prevState.out;
         });
     };
-    deleteTask(a){
+    deleteTask(index){
         this.setState(prevState =>{
-            return prevState.out.splice(a, 1);
+            return prevState.out.splice(index, 1);
         });
     };
     createTasks = () =>{
-        console.log(this.props)
+        console.log(this.props);
         return Array.from(new Array(this.state.out.length), (cur, i) => {
             return <div className={'task'}>
                 <h5>{this.state.out[i]}</h5>
